@@ -59,6 +59,7 @@ server {
     }
 }
 EOF
+systemctl restart nginx
 }
 laravel api lumen
 laravel tiger laravel
