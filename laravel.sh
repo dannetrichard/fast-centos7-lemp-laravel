@@ -63,3 +63,5 @@ EOF
 laravel api lumen
 laravel tiger laravel
 laravel bee laravel
+
+sudo /root/certbot-auto --nginx
