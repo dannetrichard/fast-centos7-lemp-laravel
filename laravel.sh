@@ -61,8 +61,6 @@ server {
 EOF
 systemctl restart nginx
 }
-laravel api lumen
-laravel tiger laravel
-laravel bee laravel
-
+laravel bee lumen
+laravel soup laravel
 sudo /root/certbot-auto --nginx

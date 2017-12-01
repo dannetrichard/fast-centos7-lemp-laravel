@@ -2,6 +2,9 @@
 #centos 7
 #https://www.google.co.jp/amp/s/www.hostinger.com/tutorials/how-to-install-lemp-centos7/amp/
 #nginx
+yum update -y
+yum install zip unzip -y
+
 yum install epel-release -y
 yum install nginx -y
 systemctl start nginx
@@ -20,7 +23,7 @@ rpm -Uvh remi-release-7.rpm
 yum install yum-utils -y
 yum-config-manager --enable remi-php71
 yum --enablerepo=remi,remi-php71 install php-fpm php-common -y
-yum --enablerepo=remi,remi-php71 install php-opcache php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongodb php-pecl-redis php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml php-Tokenizer -y
+yum --enablerepo=remi,remi-php71 install php-opcache php-pecl-apcu php-cli php-pear php-pdo php-mysqlnd php-pgsql php-pecl-mongodb php-pecl-redis php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml -y
 
 sed -i 's/user = apache/user = nginx/g' /etc/php-fpm.d/www.conf
 sed -i 's/group = apache/group = nginx/g' /etc/php-fpm.d/www.conf
@@ -39,4 +42,3 @@ composer config -g repo.packagist composer https://packagist.phpcomposer.com
 wget https://dl.eff.org/certbot-auto
 chmod a+x certbot-auto
 
-yum install zip unzip -y
